@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Knut Place</title>
+    <title>Knut r/place</title>
     <style>
         .container {
             position: relative;
@@ -27,8 +27,8 @@
     <script>
         const X_PIXELS=15
         const Y_PIXELS=15
-        const X_OFFSET=120
-        const Y_OFFSET=100
+        const X_OFFSET=380
+        const Y_OFFSET=50
 
         const X_IN_PLACE=1589
         const Y_IN_PLACE=956
@@ -73,7 +73,7 @@
             bg.drawImage(img, 0, 0, img.width, img.height, 0, Y_OFFSET, w, h)
             drawGrid(0, Y_OFFSET, bg.canvas.width, bg.canvas.height, bg)
         };
-        img.src = "https://cdn.discordapp.com/attachments/959852760067633183/959878689120743484/pixelart_place_720px.png";
+        img.src = "https://cdn.discordapp.com/attachments/960238804780851200/960246724138512464/knuts_place.png";
 
         foreground.addEventListener('mousemove', event =>
         {
@@ -84,7 +84,7 @@
 
             if (x>0 && y>0){
                 let text = x+' / ' + y;
-                fg.font = '80px Sans-serif';
+                fg.font = '50px Sans-serif';
                 fg.strokeStyle = 'black';
                 fg.lineWidth = 8;
                 fg.strokeText(text, p.x+10, p.y + 20);
@@ -98,7 +98,7 @@
             let p = getMousePos(foreground, event);
             let x = Math.floor((p.x)/X_PIXELS) + X_IN_PLACE;
             let y = Math.floor((p.y-Y_OFFSET)/Y_PIXELS) + Y_IN_PLACE;
-            let url ="https://new.reddit.com/r/place/?cx="+x+"&cy="+y+"&px=12"
+            let url ="https://new.reddit.com/r/place/?cx="+x+"&cy="+y+"&px=10"
             window.open(url, '_blank').focus();
         });
 
